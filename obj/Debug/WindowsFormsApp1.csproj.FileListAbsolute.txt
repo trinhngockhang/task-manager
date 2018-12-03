@@ -8,3 +8,18 @@ c:\users\trinh\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsF
 c:\users\trinh\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 c:\users\trinh\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 c:\users\trinh\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Khangkhang\Desktop\OS Project\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\Khangkhang\Desktop\OS Project\obj\Debug\WindowsFormsApp1.taskManager.resources
+C:\Users\Khangkhang\Desktop\OS Project\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Khangkhang\Desktop\OS Project\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Khangkhang\Desktop\OS Project\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Khangkhang\Desktop\OS Project\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Khangkhang\Desktop\OS Project\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Khangkhang\Desktop\OS Project\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Khangkhang\Desktop\OS Project\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Khangkhang\Desktop\OS Project\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Khangkhang\Desktop\OS Project\bin\Debug\WindowsFormsApp1.exe.manifest
+C:\Users\Khangkhang\Desktop\OS Project\bin\Debug\WindowsFormsApp1.application
+C:\Users\Khangkhang\Desktop\OS Project\obj\Debug\WindowsFormsApp1.TrustInfo.xml
+C:\Users\Khangkhang\Desktop\OS Project\obj\Debug\WindowsFormsApp1.exe.manifest
+C:\Users\Khangkhang\Desktop\OS Project\obj\Debug\WindowsFormsApp1.application

@@ -35,7 +35,10 @@
             this.killToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new System.Windows.Forms.ListView();
             this.processName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.processId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ram = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.respone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CPU = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -43,32 +46,35 @@
             // lblProcessText
             // 
             this.lblProcessText.AutoSize = true;
-            this.lblProcessText.Location = new System.Drawing.Point(12, 33);
+            this.lblProcessText.Location = new System.Drawing.Point(24, 63);
+            this.lblProcessText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblProcessText.Name = "lblProcessText";
-            this.lblProcessText.Size = new System.Drawing.Size(45, 13);
+            this.lblProcessText.Size = new System.Drawing.Size(90, 25);
             this.lblProcessText.TabIndex = 1;
             this.lblProcessText.Text = "Process";
             // 
             // numberP
             // 
             this.numberP.AutoSize = true;
-            this.numberP.Location = new System.Drawing.Point(77, 33);
+            this.numberP.Location = new System.Drawing.Point(154, 63);
+            this.numberP.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.numberP.Name = "numberP";
-            this.numberP.Size = new System.Drawing.Size(13, 13);
+            this.numberP.Size = new System.Drawing.Size(24, 25);
             this.numberP.TabIndex = 2;
             this.numberP.Text = "0";
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.killToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(91, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 40);
             // 
             // killToolStripMenuItem
             // 
             this.killToolStripMenuItem.Name = "killToolStripMenuItem";
-            this.killToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.killToolStripMenuItem.Size = new System.Drawing.Size(122, 36);
             this.killToolStripMenuItem.Text = "Kill";
             this.killToolStripMenuItem.Click += new System.EventHandler(this.killToolStripMenuItem_Click);
             // 
@@ -76,23 +82,45 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.processName,
-            this.ram});
+            this.processId,
+            this.ram,
+            this.respone,
+            this.CPU});
             this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(12, 63);
+            this.listView1.Location = new System.Drawing.Point(29, 117);
+            this.listView1.Margin = new System.Windows.Forms.Padding(6);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(447, 364);
+            this.listView1.Size = new System.Drawing.Size(1287, 696);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // processName
             // 
             this.processName.Text = "Process Name";
+            this.processName.Width = 179;
+            // 
+            // processId
+            // 
+            this.processId.Text = "ID";
+            this.processId.Width = 96;
             // 
             // ram
             // 
             this.ram.Text = "Ram";
+            this.ram.Width = 126;
+            // 
+            // respone
+            // 
+            this.respone.Text = "Status";
+            this.respone.Width = 182;
+            // 
+            // CPU
+            // 
+            this.CPU.Text = "CPU";
+            this.CPU.Width = 175;
             // 
             // timer1
             // 
@@ -102,17 +130,19 @@
             // 
             // taskManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 450);
+            this.ClientSize = new System.Drawing.Size(1431, 865);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.numberP);
             this.Controls.Add(this.lblProcessText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "taskManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Task Manager";
+            this.Load += new System.EventHandler(this.taskManager_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,6 +158,9 @@
         private System.Windows.Forms.ColumnHeader processName;
         private System.Windows.Forms.ColumnHeader ram;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ColumnHeader CPU;
+        private System.Windows.Forms.ColumnHeader respone;
+        private System.Windows.Forms.ColumnHeader processId;
     }
 }
 

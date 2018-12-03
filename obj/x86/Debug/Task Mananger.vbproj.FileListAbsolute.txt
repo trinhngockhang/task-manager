@@ -1,0 +1,10 @@
+C:\Users\Khangkhang\Desktop\OS Project\bin\Debug\WindowsApplication.exe.config
+C:\Users\Khangkhang\Desktop\OS Project\bin\Debug\WindowsApplication.exe
+C:\Users\Khangkhang\Desktop\OS Project\bin\Debug\WindowsApplication.pdb
+C:\Users\Khangkhang\Desktop\OS Project\obj\x86\Debug\Task Mananger.vbprojAssemblyReference.cache
+C:\Users\Khangkhang\Desktop\OS Project\obj\x86\Debug\Task_Mananger.Form1.resources
+C:\Users\Khangkhang\Desktop\OS Project\obj\x86\Debug\Task_Mananger.Resources.resources
+C:\Users\Khangkhang\Desktop\OS Project\obj\x86\Debug\Task Mananger.vbproj.GenerateResource.cache
+C:\Users\Khangkhang\Desktop\OS Project\obj\x86\Debug\Task Mananger.vbproj.CoreCompileInputs.cache
+C:\Users\Khangkhang\Desktop\OS Project\obj\x86\Debug\WindowsApplication.exe
+C:\Users\Khangkhang\Desktop\OS Project\obj\x86\Debug\WindowsApplication.pdb

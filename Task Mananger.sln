@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Task Mananger", "Task Mananger.vbproj", "{6CEA0D7D-94DD-4AD4-BD03-3A1904FAE4BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CEA0D7D-94DD-4AD4-BD03-3A1904FAE4BC}.Debug|x86.ActiveCfg = Debug|x86
+		{6CEA0D7D-94DD-4AD4-BD03-3A1904FAE4BC}.Debug|x86.Build.0 = Debug|x86
+		{6CEA0D7D-94DD-4AD4-BD03-3A1904FAE4BC}.Release|x86.ActiveCfg = Release|x86
+		{6CEA0D7D-94DD-4AD4-BD03-3A1904FAE4BC}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE98B97C-88C8-4D2A-90BC-ADDEE01183F8}
+	EndGlobalSection
+EndGlobal
