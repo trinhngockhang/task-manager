@@ -83,9 +83,9 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.processName,
             this.processId,
-            this.ram,
             this.respone,
-            this.CPU});
+            this.CPU,
+            this.ram});
             this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(29, 117);
@@ -109,6 +109,7 @@
             // 
             // ram
             // 
+            this.ram.DisplayIndex = 3;
             this.ram.Text = "Ram";
             this.ram.Width = 126;
             // 
@@ -119,6 +120,7 @@
             // 
             // CPU
             // 
+            this.CPU.DisplayIndex = 2;
             this.CPU.Text = "CPU";
             this.CPU.Width = 175;
             // 

@@ -24,13 +24,14 @@ namespace WindowsFormsApp1
         {
             process = Process.GetProcesses();
             ImageList Imagelist = new ImageList();
-            float cpuPercent = 0f;
+            double cpuPercent = 0;
             if (int.Parse(numberP.Text) != process.Length)
             {
                 float[] firstTimeCpu = new float[process.Length];
-                long[] timeStart = new long[process.Length];
-                long[] timeEnd = new long[process.Length];
+                DateTime[] timeStart = new DateTime[process.Length];
+                DateTime[] timeEnd = new DateTime[process.Length];
                 PerformanceCounter[] performanceCounters = new PerformanceCounter[process.Length];
+                DateTime test = DateTime.Now;
                 // khoi tao bo dem cpu time
                 for(int i = 0;i < process.Length; i++)
                 {
@@ -38,39 +39,41 @@ namespace WindowsFormsApp1
                     try
                     {
                         firstTimeCpu[i] = performanceCounters[i].NextValue();
-                        timeStart[i] = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+                        timeStart[i] = DateTime.Now;
                     }
                     catch
                     {
                         firstTimeCpu[i] = 0;
-                        timeStart[i] = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+                        timeStart[i] = DateTime.Now;
                     }        
                 }
-
                 long totalRam = 0;
+                listView1.BeginUpdate();
                 listView1.Items.Clear();
                 numberP.Text = process.Length.ToString();
-                Thread.Sleep(200);
-                for(int i = 0; i < process.Length; i++)
+                Thread.Sleep(50);
+                for(int i = 0; i <process.Length; i++)
                 {
-                    float cpuUsageFloat;
+                    
+                    double cpuUsageFloat;
+                    // tong ram
                     totalRam += process[i].PagedMemorySize64;
                     string status = (process[i].Responding == true ? "Responding" : "Not responding");
                     string ramUsage = (Math.Round(process[i].PagedMemorySize64 / Math.Pow(2, 20), 1) + " Mb").ToString();
                     try
                     {
-                        timeEnd[i] = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-                        Console.WriteLine("time : " + (timeEnd[i] - timeStart[i]));
-                        cpuUsageFloat = (float)(performanceCounters[i].NextValue() - firstTimeCpu[i]) / (timeEnd[i]-timeStart[i])  * 1000;
+                        timeEnd[i] =  DateTime.Now;
+                        Console.WriteLine("time : " +i + "  "  + (timeEnd[i] - timeStart[i]).TotalMilliseconds);
+                        cpuUsageFloat = (performanceCounters[i].NextValue() - firstTimeCpu[i]) / ( timeEnd[i].Subtract(timeStart[i]).TotalMilliseconds) * 100;
                        
                     }
                     catch
                     {
                         cpuUsageFloat = 0f;
-                        timeEnd[i] = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                     }
-                    
+                    //lay cpu
                     string cpuUsage = Math.Round((double) cpuUsageFloat, 1).ToString() + "%";
+                    //tinh tong cpu loai bo process dac biet
                     if(process[i].ProcessName != "Idle")
                     {
                         cpuPercent += cpuUsageFloat;
@@ -80,13 +83,12 @@ namespace WindowsFormsApp1
                         {
                             process[i].ProcessName,
                             process[i].Id.ToString(),
-                            ramUsage,
                             status,
-                            cpuUsage
+                            cpuUsage,
+                            ramUsage                        
                         };
-                    
                     try
-                         {
+                    {
                         Console.WriteLine("file location  " + process[i].MainModule.FileName);
                         Imagelist.Images.Add(
                             // Add an unique Key as identifier for the icon (same as the ID of the process)
@@ -94,21 +96,26 @@ namespace WindowsFormsApp1
                             // Add Icon to the List 
                             Icon.ExtractAssociatedIcon(process[i].MainModule.FileName).ToBitmap()
                             );
-                          }
-                        catch { }
-
+                    }
+                    catch { }
                     // add cac cot vao listview 
                     ListViewItem listView = new ListViewItem(row)
                     {
                         ImageIndex = Imagelist.Images.IndexOfKey(process[i].Id.ToString())
                     };
-                       
-                        listView1.Items.Add(listView); 
+
+                    listView1.Items.Add(listView);
+                    
+
+                   
                 }
+                
                 listView1.LargeImageList = Imagelist;
                 listView1.SmallImageList = Imagelist;
+                listView1.EndUpdate();
                 ram.Text = "Ram(" + Math.Round(totalRam / Math.Pow(2, 20) / 12958 * 100 ,1) + "%)";
-                CPU.Text = "CPU(" + cpuPercent + "%)";
+                
+                CPU.Text = "CPU(" + Math.Round(cpuPercent) + "%)";
             }
         }
         public taskManager()
